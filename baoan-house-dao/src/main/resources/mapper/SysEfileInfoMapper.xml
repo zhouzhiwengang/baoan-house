@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.SysEfileInfoMapper">
+  <resultMap id="BaseResultMap" type="com.digipower.entity.SysEfileInfo">
+    <id column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="file_sid" jdbcType="VARCHAR" property="fileSid" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="file_path" jdbcType="VARCHAR" property="filePath" />
+    <result column="file_type" jdbcType="VARCHAR" property="fileType" />
+    <result column="file_size" jdbcType="BIGINT" property="fileSize" />
+    <result column="file_sort" jdbcType="INTEGER" property="fileSort" />
+    <result column="file_desc" jdbcType="VARCHAR" property="fileDesc" />
+    <result column="is_binding" jdbcType="VARCHAR" property="isBinding" />
+    <result column="business_key" jdbcType="VARCHAR" property="businessKey" />
+    <result column="created_dt" jdbcType="TIMESTAMP" property="createdDt" />
+  </resultMap>
+ </mapper>

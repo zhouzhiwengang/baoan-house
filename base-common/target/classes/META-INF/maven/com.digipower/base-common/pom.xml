@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.digipower</groupId>
+    <artifactId>baoan-house</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  
+    <dependencies>
+		<dependency>
+			<groupId>com.digipower</groupId>
+			<artifactId>baoan-house-security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<!--starter -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<!-- test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!--web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+	
+		<!-- 数据库连接池druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.10</version>
+		</dependency>
+		<!--mysql 驱动程序 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+        <!-- Swagger2 集成 -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.7.0</version>
+		</dependency>
+		<!-- 依赖kaptcha图形生成器  -->
+		<dependency>
+			<groupId>com.github.penggle</groupId>
+			<artifactId>kaptcha</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+	</dependencies>
+  <artifactId>base-common</artifactId>
+</project>

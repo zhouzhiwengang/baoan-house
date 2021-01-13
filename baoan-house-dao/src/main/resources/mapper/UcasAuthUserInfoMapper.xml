@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.UcasAuthUserInfoMapper">
+	<resultMap id="BaseResultMap" type="com.digipower.entity.UcasAuthUserInfo">
+		<id column="SID" jdbcType="VARCHAR" property="sid" />
+		<result column="USER_PIN" jdbcType="VARCHAR" property="userPin" />
+		<result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+		<result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+		<result column="GENDER" jdbcType="VARCHAR" property="gender" />
+		<result column="TEL" jdbcType="VARCHAR" property="tel" />
+		<result column="PHONE" jdbcType="VARCHAR" property="phone" />
+		<result column="EMAIL" jdbcType="VARCHAR" property="email" />
+		<result column="STATE" jdbcType="VARCHAR" property="state" />
+		<result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+		<result column="CREATED_DT" jdbcType="DATE" property="createdDt" />
+		<result column="VERSION" jdbcType="INTEGER" property="version" />
+		<result column="UPDATED_BY" jdbcType="VARCHAR" property="updatedBy" />
+		<result column="UPDATED_DT" jdbcType="DATE" property="updatedDt" />
+		<result column="ZONE_ORG_CODE" jdbcType="VARCHAR" property="zoneOrgCode" />
+		<result column="ORGANIZTION_SID" jdbcType="VARCHAR" property="organiztionSid" />
+		<result column="VALUE1" jdbcType="VARCHAR" property="value1" />
+		<result column="VALUE2" jdbcType="VARCHAR" property="value2" />
+		<result column="VALUE3" jdbcType="VARCHAR" property="value3" />
+		<result column="DELETE_FLAG" jdbcType="INTEGER" property="deleteFlag" />
+		<result column="SESSION_ID" jdbcType="VARCHAR" property="sessionId" />
+		<result column="USER_CATEGORY" jdbcType="VARCHAR" property="userCategory"/>
+		<result column="UNIQUE_SID" jdbcType="VARCHAR" property="uniqueSid" />
+	</resultMap>
+</mapper>

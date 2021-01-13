@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.UcasAuthUserRelPrivilegeInfoMapper">
+  <resultMap id="BaseResultMap" type="com.digipower.entity.UcasAuthUserRelPrivilegeInfo">
+    <id column="SID" jdbcType="VARCHAR" property="sid" />
+    <result column="USER_SID" jdbcType="VARCHAR" property="userSid" />
+    <result column="PRIVILEGE_SID" jdbcType="VARCHAR" property="privilegeSid" />
+    <result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+    <result column="CREATED_DT" jdbcType="DATE" property="createdDt" />
+    <result column="VERSION" jdbcType="INTEGER" property="version" />
+    <result column="UPDATED_BY" jdbcType="VARCHAR" property="updatedBy" />
+    <result column="UPDATED_DT" jdbcType="DATE" property="updatedDt" />
+  </resultMap>
+ </mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.SysVerificationCodeMapper">
+  <resultMap id="BaseResultMap" type="com.digipower.entity.SysVerificationCode">
+    <id column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="created_dt" jdbcType="TIMESTAMP" property="createdDt" />
+  </resultMap>
+</mapper>
