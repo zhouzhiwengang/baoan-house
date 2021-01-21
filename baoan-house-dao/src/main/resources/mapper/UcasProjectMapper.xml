@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.UcasProjectMapper">
+  <resultMap id="BaseResultMap" type="com.digipower.entity.UcasProject">
+    <id column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="item_no" jdbcType="VARCHAR" property="itemNo" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="project_no" jdbcType="VARCHAR" property="projectNo" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="project_category" jdbcType="VARCHAR" property="projectCategory" />
+    <result column="project_address" jdbcType="VARCHAR" property="projectAddress" />
+    <result column="project_location" jdbcType="VARCHAR" property="projectLocation" />
+    <result column="plan_price" jdbcType="VARCHAR" property="planPrice" />
+    <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+    <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+    <result column="winner_price" jdbcType="VARCHAR" property="winnerPrice" />
+    <result column="contract_price" jdbcType="VARCHAR" property="contractPrice" />
+    <result column="cons_permit_no" jdbcType="VARCHAR" property="consPermitNo" />
+    <result column="plan_permit_no" jdbcType="VARCHAR" property="planPermitNo" />
+    <result column="plan_project_no" jdbcType="VARCHAR" property="planProjectNo" />
+    <result column="contract_start_dt" jdbcType="TIMESTAMP" property="contractStartDt" />
+    <result column="contract_end_dt" jdbcType="TIMESTAMP" property="contractEndDt" />
+    <result column="architecture_area" jdbcType="VARCHAR" property="architectureArea" />
+    <result column="cons_range" jdbcType="VARCHAR" property="consRange" />
+    <result column="send_dt" jdbcType="TIMESTAMP" property="sendDt" />
+    <result column="cons_report_dt" jdbcType="TIMESTAMP" property="consReportDt" />
+    <result column="tenderer" jdbcType="VARCHAR" property="tenderer" />
+    <result column="year_serial_number" jdbcType="VARCHAR" property="yearSerialNumber" />
+    <result column="cons_report_type" jdbcType="VARCHAR" property="consReportType" />
+    <result column="send_package_type" jdbcType="VARCHAR" property="sendPackageType" />
+    <result column="cons_unit_sid" jdbcType="VARCHAR" property="consUnitSid" />
+    <result column="build_unit_sid" jdbcType="VARCHAR" property="buildUnitSid" />
+    <result column="quality_supervision_unit_sid" jdbcType="VARCHAR" property="qualitySupervisionUnitSid" />
+    <result column="recon_unit_sid" jdbcType="VARCHAR" property="reconUnitSid" />
+    <result column="design_unit_sid" jdbcType="VARCHAR" property="designUnitSid" />
+
+    <result column="completed_project_name" jdbcType="VARCHAR" property="completedProjectName" />
+    <result column="completed_project_number" jdbcType="VARCHAR" property="completedProjectNumber" />
+    <result column="completed_project_person" jdbcType="VARCHAR" property="completedProjectPerson" />
+    <result column="completed_project_person_tel" jdbcType="VARCHAR" property="completedProjectPersonTel" />
+    <result column="build_unit_manager" jdbcType="VARCHAR" property="buildUnitManager" />
+    <result column="record_dt" jdbcType="TIMESTAMP" property="recordDt" />
+    <result column="reviewer" jdbcType="VARCHAR" property="reviewer" />
+  </resultMap>
+  
+  <resultMap id="BaseResultMapVo" type="com.digipower.vo.UcasProjectVo"
+		extends="BaseResultMap">
+		<association property="consUnit"
+			javaType="com.digipower.entity.UcasUnit">
+				<id column="cons_sid" jdbcType="VARCHAR" property="sid" />
+			    <result column="cons_unit_name" jdbcType="VARCHAR" property="unitName" />
+			    <result column="cons_unit_type" jdbcType="VARCHAR" property="unitType" />
+			    <result column="cons_unit_legal_person" jdbcType="VARCHAR" property="unitLegalPerson" />
+			    <result column="cons_unit_legal_person_idcard" jdbcType="VARCHAR" property="unitLegalPersonIdcard" />
+			    <result column="cons_unit_add" jdbcType="VARCHAR" property="unitAdd" />
+			    <result column="cons_unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+			    <result column="cons_unit_contact_tel" jdbcType="VARCHAR" property="unitContactTel" />
+			    <result column="cons_unit_qualification_level" jdbcType="VARCHAR" property="unitQualificationLevel" />
+			    
+			    <result column="cons_principal_name" jdbcType="VARCHAR" property="principalName" />
+    			<result column="cons_principal_idcard" jdbcType="VARCHAR" property="principalIdcard" />
+			    <result column="cons_principal_tel" jdbcType="VARCHAR" property="principalTel" />
+			    <result column="cons_qualite_manager_name" jdbcType="VARCHAR" property="qualiteManagerName" />
+			    <result column="cons_qualite_manager_tel" jdbcType="VARCHAR" property="qualiteManagerTel" />
+			    <result column="cons_safe_manager_name" jdbcType="VARCHAR" property="safeManagerName" />
+			    <result column="cons_safe_manager_tel" jdbcType="VARCHAR" property="safeManagerTel" />
+			    <result column="cons_project_manager_name" jdbcType="VARCHAR" property="projectManagerName" />
+			    <result column="cons_project_manager_certificate" jdbcType="VARCHAR" property="projectManagerCertificate" />
+			    <result column="cons_project_manager_level" jdbcType="VARCHAR" property="projectManagerLevel" />
+		</association>
+		<association property="buildUnit"
+			javaType="com.digipower.entity.UcasUnit">
+				<id column="build_sid" jdbcType="VARCHAR" property="sid" />
+			    <result column="build_unit_name" jdbcType="VARCHAR" property="unitName" />
+			    <result column="build_unit_type" jdbcType="VARCHAR" property="unitType" />
+			    <result column="build_unit_legal_person" jdbcType="VARCHAR" property="unitLegalPerson" />
+			    <result column="build_unit_legal_person_idcard" jdbcType="VARCHAR" property="unitLegalPersonIdcard" />
+			    <result column="build_unit_add" jdbcType="VARCHAR" property="unitAdd" />
+			    <result column="build_unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+			    <result column="build_unit_contact_tel" jdbcType="VARCHAR" property="unitContactTel" />
+			    <result column="build_unit_qualification_level" jdbcType="VARCHAR" property="unitQualificationLevel" />
+			    
+			    <result column="build_principal_name" jdbcType="VARCHAR" property="principalName" />
+    			<result column="build_principal_idcard" jdbcType="VARCHAR" property="principalIdcard" />
+			    <result column="build_principal_tel" jdbcType="VARCHAR" property="principalTel" />
+			    <result column="build_qualite_manager_name" jdbcType="VARCHAR" property="qualiteManagerName" />
+			    <result column="build_qualite_manager_tel" jdbcType="VARCHAR" property="qualiteManagerTel" />
+			    <result column="build_safe_manager_name" jdbcType="VARCHAR" property="safeManagerName" />
+			    <result column="build_safe_manager_tel" jdbcType="VARCHAR" property="safeManagerTel" />
+			    <result column="build_project_manager_name" jdbcType="VARCHAR" property="projectManagerName" />
+			    <result column="build_project_manager_certificate" jdbcType="VARCHAR" property="projectManagerCertificate" />
+			    <result column="build_project_manager_level" jdbcType="VARCHAR" property="projectManagerLevel" />
+		</association>
+		<association property="qualitySupervisionUnit"
+			javaType="com.digipower.entity.UcasUnit">
+				<id column="quality_supervision_sid" jdbcType="VARCHAR" property="sid" />
+			    <result column="quality_supervision_unit_name" jdbcType="VARCHAR" property="unitName" />
+			    <result column="quality_supervision_unit_type" jdbcType="VARCHAR" property="unitType" />
+			    <result column="quality_supervision_unit_legal_person" jdbcType="VARCHAR" property="unitLegalPerson" />
+			    <result column="quality_supervision_unit_legal_person_idcard" jdbcType="VARCHAR" property="unitLegalPersonIdcard" />
+			    <result column="quality_supervision_unit_add" jdbcType="VARCHAR" property="unitAdd" />
+			    <result column="quality_supervision_unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+			    <result column="quality_supervision_unit_contact_tel" jdbcType="VARCHAR" property="unitContactTel" />
+			    <result column="quality_supervision_unit_qualification_level" jdbcType="VARCHAR" property="unitQualificationLevel" />
+			    
+			    <result column="quality_supervision_principal_name" jdbcType="VARCHAR" property="principalName" />
+    			<result column="quality_supervision_principal_idcard" jdbcType="VARCHAR" property="principalIdcard" />
+			    <result column="quality_supervision_principal_tel" jdbcType="VARCHAR" property="principalTel" />
+			    <result column="quality_supervision_qualite_manager_name" jdbcType="VARCHAR" property="qualiteManagerName" />
+			    <result column="quality_supervision_qualite_manager_tel" jdbcType="VARCHAR" property="qualiteManagerTel" />
+			    <result column="quality_supervision_safe_manager_name" jdbcType="VARCHAR" property="safeManagerName" />
+			    <result column="quality_supervision_safe_manager_tel" jdbcType="VARCHAR" property="safeManagerTel" />
+			    <result column="quality_supervision_project_manager_name" jdbcType="VARCHAR" property="projectManagerName" />
+			    <result column="quality_supervision_project_manager_certificate" jdbcType="VARCHAR" property="projectManagerCertificate" />
+			    <result column="quality_supervision_project_manager_level" jdbcType="VARCHAR" property="projectManagerLevel" />
+		</association>
+		<association property="reconUnit"
+			javaType="com.digipower.entity.UcasUnit">
+				<id column="recon_sid" jdbcType="VARCHAR" property="sid" />
+			    <result column="recon_unit_name" jdbcType="VARCHAR" property="unitName" />
+			    <result column="recon_unit_type" jdbcType="VARCHAR" property="unitType" />
+			    <result column="recon_unit_legal_person" jdbcType="VARCHAR" property="unitLegalPerson" />
+			    <result column="recon_unit_legal_person_idcard" jdbcType="VARCHAR" property="unitLegalPersonIdcard" />
+			    <result column="recon_unit_add" jdbcType="VARCHAR" property="unitAdd" />
+			    <result column="recon_unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+			    <result column="recon_unit_contact_tel" jdbcType="VARCHAR" property="unitContactTel" />
+			    <result column="recon_unit_qualification_level" jdbcType="VARCHAR" property="unitQualificationLevel" />
+			    
+			    <result column="recon_principal_name" jdbcType="VARCHAR" property="principalName" />
+    			<result column="recon_principal_idcard" jdbcType="VARCHAR" property="principalIdcard" />
+			    <result column="recon_principal_tel" jdbcType="VARCHAR" property="principalTel" />
+			    <result column="recon_qualite_manager_name" jdbcType="VARCHAR" property="qualiteManagerName" />
+			    <result column="recon_qualite_manager_tel" jdbcType="VARCHAR" property="qualiteManagerTel" />
+			    <result column="recon_safe_manager_name" jdbcType="VARCHAR" property="safeManagerName" />
+			    <result column="recon_safe_manager_tel" jdbcType="VARCHAR" property="safeManagerTel" />
+			    <result column="recon_project_manager_name" jdbcType="VARCHAR" property="projectManagerName" />
+			    <result column="recon_project_manager_certificate" jdbcType="VARCHAR" property="projectManagerCertificate" />
+			    <result column="recon_project_manager_level" jdbcType="VARCHAR" property="projectManagerLevel" />
+		</association>
+		<association property="designUnit"
+			javaType="com.digipower.entity.UcasUnit">
+				<id column="design_sid" jdbcType="VARCHAR" property="sid" />
+			    <result column="design_unit_name" jdbcType="VARCHAR" property="unitName" />
+			    <result column="design_unit_type" jdbcType="VARCHAR" property="unitType" />
+			    <result column="design_unit_legal_person" jdbcType="VARCHAR" property="unitLegalPerson" />
+			    <result column="design_unit_legal_person_idcard" jdbcType="VARCHAR" property="unitLegalPersonIdcard" />
+			    <result column="design_unit_add" jdbcType="VARCHAR" property="unitAdd" />
+			    <result column="design_unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+			    <result column="design_unit_contact_tel" jdbcType="VARCHAR" property="unitContactTel" />
+			    <result column="design_unit_qualification_level" jdbcType="VARCHAR" property="unitQualificationLevel" />
+			    
+			    <result column="design_principal_name" jdbcType="VARCHAR" property="principalName" />
+    			<result column="design_principal_idcard" jdbcType="VARCHAR" property="principalIdcard" />
+			    <result column="design_principal_tel" jdbcType="VARCHAR" property="principalTel" />
+			    <result column="design_qualite_manager_name" jdbcType="VARCHAR" property="qualiteManagerName" />
+			    <result column="design_qualite_manager_tel" jdbcType="VARCHAR" property="qualiteManagerTel" />
+			    <result column="design_safe_manager_name" jdbcType="VARCHAR" property="safeManagerName" />
+			    <result column="design_safe_manager_tel" jdbcType="VARCHAR" property="safeManagerTel" />
+			    <result column="design_project_manager_name" jdbcType="VARCHAR" property="projectManagerName" />
+			    <result column="design_project_manager_certificate" jdbcType="VARCHAR" property="projectManagerCertificate" />
+			    <result column="design_project_manager_level" jdbcType="VARCHAR" property="projectManagerLevel" />
+		</association>
+  </resultMap>
+  
+  <sql id="Base_Column_List">
+  	ucas_project.sid, ucas_project.item_no, ucas_project.item_name, ucas_project.project_no, ucas_project.project_name, ucas_project.project_category, 
+  	ucas_project.project_address, ucas_project.project_location, ucas_project.plan_price, ucas_project.longitude, ucas_project.latitude, ucas_project.winner_price, 
+  	ucas_project.contract_price, ucas_project.cons_permit_no, ucas_project.plan_permit_no, ucas_project.plan_project_no, ucas_project.contract_start_dt, ucas_project.contract_end_dt, 
+    ucas_project.architecture_area, ucas_project.cons_range, ucas_project.send_dt, ucas_project.cons_report_dt, ucas_project.tenderer, ucas_project.year_serial_number, 
+    ucas_project.cons_report_type, ucas_project.send_package_type, ucas_project.cons_unit_sid, ucas_project.build_unit_sid, ucas_project.quality_supervision_unit_sid, 
+    ucas_project.recon_unit_sid, ucas_project.design_unit_sid, ucas_project.completed_project_name, ucas_project.completed_project_number, ucas_project.completed_project_person,
+    ucas_project.completed_project_person_tel, ucas_project.build_unit_manager, ucas_project.record_dt,  ucas_project.reviewer,
+    
+    a.sid as cons_sid, a.unit_name as cons_unit_name, a.unit_type as cons_unit_type, a.unit_legal_person as cons_unit_legal_person, 
+    a.unit_legal_person_idcard as cons_unit_legal_person_idcard, a.unit_add as cons_unit_add, a.unit_contact_person as cons_unit_contact_person, 
+    a.unit_contact_tel as cons_unit_contact_tel, a.unit_qualification_level as cons_unit_qualification_level, a.principal_name as cons_principal_name, a.principal_idcard as cons_principal_idcard,
+    a.principal_tel as cons_principal_tel, a.qualite_manager_name as cons_qualite_manager_name, a.qualite_manager_tel as cons_qualite_manager_tel, a.safe_manager_name as cons_safe_manager_name,
+    a.safe_manager_tel as cons_safe_manager_tel, a.project_manager_name as cons_project_manager_name, a.project_manager_certificate as cons_project_manager_certificate, a.project_manager_level as cons_project_manager_level,
+    
+    b.sid as build_sid, b.unit_name as build_unit_name, b.unit_type as build_unit_type, b.unit_legal_person as build_unit_legal_person, 
+    b.unit_legal_person_idcard as build_unit_legal_person_idcard, b.unit_add as build_unit_add, b.unit_contact_person as build_unit_contact_person, 
+    b.unit_contact_tel as build_unit_contact_tel, b.unit_qualification_level as build_unit_qualification_level, b.principal_name as build_principal_name, b.principal_idcard as build_principal_idcard,
+    b.principal_tel as build_principal_tel, b.qualite_manager_name as build_qualite_manager_name, b.qualite_manager_tel as build_qualite_manager_tel, b.safe_manager_name as build_safe_manager_name,
+    b.safe_manager_tel as build_safe_manager_tel, b.project_manager_name as build_project_manager_name, b.project_manager_certificate as build_project_manager_certificate, b.project_manager_level as build_project_manager_level, 
+    
+    c.sid as quality_supervision_sid, c.unit_name as quality_supervision_unit_name, c.unit_type as quality_supervision_unit_type, c.unit_legal_person as quality_supervision_unit_legal_person, 
+    c.unit_legal_person_idcard as quality_supervision_unit_legal_person_idcard, c.unit_add as quality_supervision_unit_add, c.unit_contact_person as quality_supervision_unit_contact_person, 
+    c.unit_contact_tel as quality_supervision_unit_contact_tel, c.unit_qualification_level as quality_supervision_unit_qualification_level, c.principal_name as quality_supervision_principal_name, c.principal_idcard as quality_supervision_principal_idcard,
+    c.principal_tel as quality_supervision_principal_tel, c.qualite_manager_name as quality_supervision_qualite_manager_name, c.qualite_manager_tel as quality_supervision_qualite_manager_tel, c.safe_manager_name as quality_supervision_safe_manager_name,
+    c.safe_manager_tel as quality_supervision_safe_manager_tel, c.project_manager_name as quality_supervision_project_manager_name, c.project_manager_certificate as quality_supervision_project_manager_certificate,
+    c.project_manager_level as quality_supervision_project_manager_level, 
+    
+    d.sid as recon_sid, d.unit_name as recon_unit_name, d.unit_type as recon_unit_type, d.unit_legal_person as recon_unit_legal_person, 
+    d.unit_legal_person_idcard as recon_unit_legal_person_idcard, d.unit_add as recon_unit_add, d.unit_contact_person as recon_unit_contact_person, 
+    d.unit_contact_tel as recon_unit_contact_tel, d.unit_qualification_level as recon_unit_qualification_level, d.principal_name as recon_principal_name, 
+    d.principal_idcard as recon_principal_idcard, d.principal_tel as recon_principal_tel, d.qualite_manager_name as recon_qualite_manager_name, d.qualite_manager_tel as recon_qualite_manager_tel,
+    d.safe_manager_name as recon_safe_manager_name, d.safe_manager_tel as recon_safe_manager_tel, d.project_manager_name as recon_project_manager_name, d.project_manager_certificate as recon_project_manager_certificate,
+    d.project_manager_level as recon_project_manager_level, 
+    
+    e.sid as design_sid, e.unit_name as design_unit_name, e.unit_type as design_unit_type, e.unit_legal_person as design_unit_legal_person, 
+    e.unit_legal_person_idcard as design_unit_legal_person_idcard, e.unit_add as design_unit_add, e.unit_contact_person as design_unit_contact_person, 
+    e.unit_contact_tel as design_unit_contact_tel, e.unit_qualification_level as design_unit_qualification_level, e.principal_name as design_principal_name,
+    e.principal_idcard as design_principal_idcard, e.principal_tel as design_principal_tel, e.qualite_manager_name as design_qualite_manager_name, 
+    e.qualite_manager_tel as design_qualite_manager_tel, e.safe_manager_name as design_safe_manager_name, e.safe_manager_tel as design_safe_manager_tel, 
+    e.project_manager_name as design_project_manager_name, e.project_manager_certificate as design_project_manager_certificate, e.project_manager_level as design_project_manager_level
+  </sql>
+  <sql id="condition">
+  		<if test="itemName != null and itemName !=''">
+  			and ucas_project.item_name like '%${itemName}%'
+  		</if>
+  		<if test="itemNo != null and itemNo !=''">
+  			and ucas_project.item_no like '%${itemNo}%'
+  		</if>
+  		<if test="projectName != null and projectName !=''">
+  			and ucas_project.project_name like '%${projectName}%'
+  		</if>
+  		<if test="projectNo != null and projectNo !=''">
+  			and ucas_project.project_no like '%${projectNo}%'
+  		</if>
+  		<if test="consPermitNo != null and consPermitNo !=''">
+  			and ucas_project.cons_permit_no like '%${consPermitNo}%'
+  		</if>
+  		<if test="startSendDt != null and startSendDt !=''">
+  			and ucas_project.send_dt &gt;= TO_DATE(#{startSendDt},'yyyy-mm-dd')
+  		</if>
+  		<if test="endSendDt != null and endSendDt !=''">
+  			and ucas_project.send_dt &lt;= TO_DATE(#{endSendDt},'yyyy-mm-dd')
+  		</if>
+  		<if test="buildName != null and buildName != ''">
+  			and b.unit_type = 'buildUnit' and b.unit_name like '%${buildName}%'
+  		</if>
+  		<if test="consName != null and consName != ''">
+  			and a.unit_type = 'consUnit' and a.unit_name like '%${consName}%'
+  		</if>
+  		<if test="qualitySupervisionName != null and qualitySupervisionName != ''">
+  			and c.unit_type = 'qualitySupervisionUnit' and c.unit_name like '%${qualitySupervisionName}%'
+  		</if>
+  		<if test="reconName != null and reconName != ''">
+  			and d.unit_type = 'reconUnit' and d.unit_name like '%${reconName}%'
+  		</if>
+  		<if test="designName != null and designName != ''">
+  			and e.unit_type = 'designUnit' and e.unit_name like '%${designName}%'
+  		</if>
+  		<if test="yearSerialNumber != null and yearSerialNumber != ''">
+  			and ucas_project.year_serial_number like '%${yearSerialNumber}%'
+  		</if>
+  		<if test="itemType != null and itemType != ''">
+  		</if>
+  		<if test="sendPackageType != null and sendPackageType != ''">
+  			and ucas_project.send_package_type = #{sendPackageType}
+  		</if>
+  		
+  </sql>
+  <sql id="conditionVo">
+  		<if test="vo.itemName != null and vo.itemName !=''">
+  			and ucas_project.item_name like '%${vo.itemName}%'
+  		</if>
+  		<if test="vo.itemNo != null and vo.itemNo !=''">
+  			and ucas_project.item_no like '%${vo.itemNo}%'
+  		</if>
+  		<if test="vo.projectName != null and vo.projectName !=''">
+  			and ucas_project.project_name like '%${vo.projectName}%'
+  		</if>
+  		<if test="vo.projectNo != null and vo.projectNo !=''">
+  			and ucas_project.project_no like '%${vo.projectNo}%'
+  		</if>
+  		<if test="vo.consPermitNo != null and vo.consPermitNo !=''">
+  			and ucas_project.cons_permit_no like '%${vo.consPermitNo}%'
+  		</if>
+  		<if test="vo.startSendDt != null and vo.startSendDt !=''">
+  			and ucas_project.send_dt &gt;= TO_DATE(#{vo.startSendDt},'yyyy-mm-dd')
+  		</if>
+  		<if test="vo.endSendDt != null and vo.endSendDt !=''">
+  			and ucas_project.send_dt &lt;= TO_DATE(#{vo.endSendDt},'yyyy-mm-dd')
+  		</if>
+  		<if test="vo.buildName != null and vo.buildName != ''">
+  			and b.unit_type = 'buildUnit' and b.unit_name like '%${vo.buildName}%'
+  		</if>
+  		<if test="vo.consName != null and vo.consName != ''">
+  			and a.unit_type = 'consUnit' and a.unit_name like '%${consName}%'
+  		</if>
+  		<if test="vo.qualitySupervisionName != null and vo.qualitySupervisionName != ''">
+  			and c.unit_type = 'qualitySupervisionUnit' and c.unit_name like '%${vo.qualitySupervisionName}%'
+  		</if>
+  		<if test="vo.reconName != null and vo.reconName != ''">
+  			and d.unit_type = 'reconUnit' and d.unit_name like '%${vo.reconName}%'
+  		</if>
+  		<if test="vo.designName != null and vo.designName != ''">
+  			and e.unit_type = 'designUnit' and e.unit_name like '%${vo.designName}%'
+  		</if>
+  		<if test="vo.yearSerialNumber != null and vo.yearSerialNumber != ''">
+  			and ucas_project.year_serial_number like '%${vo.yearSerialNumber}%'
+  		</if>
+  		<if test="vo.itemType != null and vo.itemType != ''">
+  		</if>
+  		<if test="vo.sendPackageType != null and vo.sendPackageType != ''">
+  			and ucas_project.send_package_type = #{vo.sendPackageType}
+  		</if>
+  		
+  </sql>
+  
+  
+  <select id="selectList" parameterType="map" resultMap="BaseResultMapVo">
+  		select
+		<include refid="Base_Column_List"></include>
+		from ucas_project
+		left join ucas_unit a on a.sid = ucas_project.cons_unit_sid
+		left join ucas_unit b on b.sid = ucas_project.build_unit_sid
+		left join ucas_unit c on c.sid = ucas_project.quality_supervision_unit_sid
+		left join ucas_unit d on d.sid = ucas_project.recon_unit_sid
+		left join ucas_unit e on e.sid = ucas_project.design_unit_sid
+  		where 1 = 1
+  		<include refid="condition"></include>
+  </select>
+  
+  <select id="selectPage" parameterType="map" resultMap="BaseResultMapVo">
+  		select
+		<include refid="Base_Column_List"></include>
+		from ucas_project
+		left join ucas_unit a on a.sid = ucas_project.cons_unit_sid
+		left join ucas_unit b on b.sid = ucas_project.build_unit_sid
+		left join ucas_unit c on c.sid = ucas_project.quality_supervision_unit_sid
+		left join ucas_unit d on d.sid = ucas_project.recon_unit_sid
+		left join ucas_unit e on e.sid = ucas_project.design_unit_sid
+  		where 1 = 1
+  		<include refid="conditionVo"></include>
+  </select>
+  
+  
+ </mapper>

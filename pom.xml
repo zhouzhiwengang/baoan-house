@@ -24,5 +24,7 @@
 		<module>baoan-house-api</module>
 		<module>baoan-house-dao</module>
 		<module>baoan-house-security</module>
+		<module>baoan-house-zxing</module>
+		<module>baoan-house-elastic-job</module>
 	</modules>
 </project>

@@ -13,6 +13,11 @@
 			<artifactId>baoan-house-security</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.digipower</groupId>
+			<artifactId>baoan-house-elastic-job</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 		<!--starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

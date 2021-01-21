@@ -31,9 +31,6 @@ public class SysEfileInfo implements Serializable {
 
 	private String businessKey;
 
-	// 是否为当前用户 true表示是
-	private boolean isCurrentUser;
-
 	private Date createdDt;
 
 }

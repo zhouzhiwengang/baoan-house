@@ -46,7 +46,7 @@ public class AttachmentComponent {
 	
 	public SysEfileInfo smallAttachUpload(ChunkInfoModel entity, String folder) {
 		QueryWrapper<SysEfileStore> queryWrapper = new QueryWrapper<SysEfileStore>();
-		queryWrapper.eq("store_Path", FileUploadConstant.EFILE_UPLOAD_DIR_PATH);
+		queryWrapper.eq("store_code", FileUploadConstant.EFILE_UPLOAD_DIR_PATH);
 		Map<String, Object> map = sysEfileStoreService.getMap(queryWrapper);
 		
 
@@ -75,6 +75,7 @@ public class AttachmentComponent {
 		ChunkInfoModel model = (ChunkInfoModel) paramter.get("file");
 
 		SysEfileInfo efile = new SysEfileInfo();
+		efile.setSid(String.valueOf(idGenerator.nextId()));
 		efile.setFileName(model.getFilename());
 		efile.setFilePath(model.getFilePath().replace(String.valueOf(map.get(FileUploadConstant.ACTUALPATH)).replace("/", "\\"), pathPrefix.concat("\\")));
 		efile.setFileSid(model.getFileSid());

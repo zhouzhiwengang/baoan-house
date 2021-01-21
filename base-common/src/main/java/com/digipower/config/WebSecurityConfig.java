@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -76,19 +75,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.authenticationProvider(verificationCodeProvider);
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		 
@@ -127,13 +113,33 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Bean
 	public CorsFilter corsFilter() {
-		UrlBasedCorsConfigurationSource configurationSource = new UrlBasedCorsConfigurationSource();
-		CorsConfiguration cors = new CorsConfiguration();
-		cors.setAllowCredentials(true);
-		cors.addAllowedOrigin("*");
-		cors.addAllowedHeader("*");
-		cors.addAllowedMethod("*");
-		configurationSource.registerCorsConfiguration("/**", cors);
-		return new CorsFilter(configurationSource);
+		//1.添加CORS配置信息
+        CorsConfiguration config = new CorsConfiguration();
+          //放行哪些原始域
+          config.addAllowedOrigin("*");
+          //是否发送Cookie信息
+          config.setAllowCredentials(true);
+          //放行哪些原始域(请求方式)
+          config.addAllowedMethod("*");
+          //放行哪些原始域(头部信息)
+          config.addAllowedHeader("*");
+          //暴露哪些头部信息（因为跨域访问默认不能获取全部头部信息）
+          // config.addExposedHeader("*");
+          
+          config.addExposedHeader("Content-Type");
+          config.addExposedHeader( "X-Requested-With");
+          config.addExposedHeader("accept");
+          config.addExposedHeader("Origin");
+          config.addExposedHeader( "Access-Control-Request-Method");
+          config.addExposedHeader("Access-Control-Request-Headers");
+
+
+        //2.添加映射路径
+        UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
+        configSource.registerCorsConfiguration("/**", config);
+
+        //3.返回新的CorsFilter.
+        return new CorsFilter(configSource);
+
 	}
 }

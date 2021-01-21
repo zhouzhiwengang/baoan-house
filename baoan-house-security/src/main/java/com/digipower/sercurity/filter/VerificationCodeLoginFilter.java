@@ -141,6 +141,9 @@ public class VerificationCodeLoginFilter extends AbstractAuthenticationProcessin
 		out.close();
 	}
 
+	/**
+	 * 认证失败，改方法被调用
+	 */
 	@Override
 	protected void unsuccessfulAuthentication(HttpServletRequest request, HttpServletResponse response,
 			AuthenticationException ex) throws IOException, ServletException {

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.SysLogRecordMapper">
+  <resultMap id="BaseResultMap" type="com.digipower.entity.SysLogRecord">
+    <id column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="create_dt" jdbcType="TIMESTAMP" property="createDt" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+    <result column="record_dt" jdbcType="TIMESTAMP" property="recordDt" />
+    <result column="cons_permit_no" jdbcType="VARCHAR" property="consPermitNo" />
+    <result column="completed_project_number" jdbcType="VARCHAR" property="completedProjectNumber" />
+    <result column="item_no" jdbcType="VARCHAR" property="itemNo" />
+    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
+    <result column="project_no" jdbcType="VARCHAR" property="projectNo" />
+    <result column="project_name" jdbcType="VARCHAR" property="projectName" />
+    <result column="completed_project_name" jdbcType="VARCHAR" property="completedProjectName" />
+  </resultMap>
+</mapper>

@@ -21,13 +21,13 @@ public class KaptchaComponent {
 		properties.put("kaptcha.border", "no");
 		properties.put("kaptcha.border.color", "105,179,90");
 		properties.put("kaptcha.textproducer.font.color", "blue");
-		properties.put("kaptcha.image.width", "100");
-		properties.put("kaptcha.image.height", "50");
-		properties.put("kaptcha.textproducer.font.size", "27");
+		properties.put("kaptcha.image.width", "200");
+		properties.put("kaptcha.image.height", "100");
+		properties.put("kaptcha.textproducer.font.size", "48");
 		properties.put("kaptcha.session.key", "code");
 		properties.put("kaptcha.textproducer.char.length", "4");
 		properties.put("kaptcha.textproducer.font.names", "宋体,楷体,微软雅黑");
-		properties.put("kaptcha.textproducer.char.string", "0123456789ABCEFGHIJKLMNOPQRSTUVWXYZ");
+		properties.put("kaptcha.textproducer.char.string", "0123456789");
 		properties.put("kaptcha.obscurificator.impl", "com.google.code.kaptcha.impl.WaterRipple");
 		properties.put("kaptcha.noise.color", "black");
 		properties.put("kaptcha.noise.impl", "com.google.code.kaptcha.impl.DefaultNoise");

@@ -60,24 +60,10 @@ public class VerificationCodeAuthenticationToken extends AbstractAuthenticationT
         super.setAuthenticated(false);
     }
 
-
-
 	@Override
 	public void eraseCredentials() {
 		// TODO Auto-generated method stub
 		super.eraseCredentials();
 		credentials = null;
 	}
-	
-	
-
-
-	
-	
-	
-	
-
-
-	
-
 }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.digipower.mapper.UcasUnitMapper">
+  <resultMap id="BaseResultMap" type="com.digipower.entity.UcasUnit">
+   	<id column="sid" jdbcType="VARCHAR" property="sid" />
+    <result column="unit_name" jdbcType="VARCHAR" property="unitName" />
+    <result column="unit_type" jdbcType="VARCHAR" property="unitType" />
+    <result column="unit_legal_person" jdbcType="VARCHAR" property="unitLegalPerson" />
+    <result column="unit_legal_person_idcard" jdbcType="VARCHAR" property="unitLegalPersonIdcard" />
+    <result column="unit_add" jdbcType="VARCHAR" property="unitAdd" />
+    <result column="unit_contact_person" jdbcType="VARCHAR" property="unitContactPerson" />
+    <result column="unit_contact_tel" jdbcType="VARCHAR" property="unitContactTel" />
+    <result column="unit_qualification_level" jdbcType="VARCHAR" property="unitQualificationLevel" />
+    
+    <result column="principal_name" jdbcType="VARCHAR" property="principalName" />
+    <result column="principal_idcard" jdbcType="VARCHAR" property="principalIdcard" />
+    <result column="principal_tel" jdbcType="VARCHAR" property="principalTel" />
+    <result column="qualite_manager_name" jdbcType="VARCHAR" property="qualiteManagerName" />
+    <result column="qualite_manager_tel" jdbcType="VARCHAR" property="qualiteManagerTel" />
+    <result column="safe_manager_name" jdbcType="VARCHAR" property="safeManagerName" />
+    <result column="safe_manager_tel" jdbcType="VARCHAR" property="safeManagerTel" />
+    <result column="project_manager_name" jdbcType="VARCHAR" property="projectManagerName" />
+    <result column="project_manager_certificate" jdbcType="VARCHAR" property="projectManagerCertificate" />
+    <result column="project_manager_level" jdbcType="VARCHAR" property="projectManagerLevel" />
+  </resultMap>
+  
+ </mapper>
